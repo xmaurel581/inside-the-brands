@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inside The Brands — Le Média Marketing</title>
+
+<!-- SEO -->
+<meta name="description" content="Inside The Brands décrypte les stratégies marketing des grandes marques. Analyses, études de cas, tendances et interviews pour les passionnés du business et du marketing.">
+<meta name="keywords" content="marketing, stratégie de marque, brand, publicité, analyse marketing, décryptage, tendances">
+<meta name="author" content="Inside The Brands">
+<link rel="canonical" href="https://inside-the-brands.netlify.app">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://inside-the-brands.netlify.app">
+<meta property="og:title" content="Inside The Brands — Le Média Marketing">
+<meta property="og:description" content="Décryptage des stratégies marketing des marques qui façonnent notre monde. Analyses, études de cas et tendances chaque semaine.">
+<meta property="og:image" content="https://inside-the-brands.netlify.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Inside The Brands">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://inside-the-brands.netlify.app">
+<meta name="twitter:title" content="Inside The Brands — Le Média Marketing">
+<meta name="twitter:description" content="Décryptage des stratégies marketing des marques qui façonnent notre monde.">
+<meta name="twitter:image" content="https://inside-the-brands.netlify.app/og-image.png">
+
+<!-- Favicon inline SVG -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230d0f14' stroke='%23e96d10' stroke-width='4'/><path d='M16 50 Q35 20 50 20 Q65 20 84 50 Q65 80 50 80 Q35 80 16 50Z' stroke='%23e96d10' stroke-width='4' fill='none'/><circle cx='50' cy='50' r='4' fill='%23e96d10'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0d0f14;
+    --dark: #151820;
+    --orange: #e96d10;
+    --orange-light: #f5813a;
+    --white: #f5f2ed;
+    --gray: #8a8f9e;
+    --border: rgba(233,109,16,0.18);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(13,15,20,0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+  }
+  .nav-eye {
+    width: 38px; height: 38px;
+  }
+  .nav-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--white);
+    line-height: 1;
+  }
+  .nav-title span { color: var(--orange); }
+  .nav-links {
+    display: flex; align-items: center; gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--orange); }
+  .nav-cta {
+    background: var(--orange);
+    color: var(--black) !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: var(--orange-light) !important; color: var(--black) !important; }
+
+  /* ─── HERO ────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 80% 50%, rgba(233,109,16,0.09) 0%, transparent 70%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 60px,
+        rgba(233,109,16,0.03) 60px,
+        rgba(233,109,16,0.03) 61px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 60px,
+        rgba(233,109,16,0.03) 60px,
+        rgba(233,109,16,0.03) 61px
+      );
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(233,109,16,0.12);
+    border: 1px solid var(--border);
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+    animation: blink 1.6s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 7vw, 100px);
+    line-height: 0.92;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 .line-orange { color: var(--orange); display: block; }
+  .hero h1 .line-outline {
+    -webkit-text-stroke: 1.5px var(--white);
+    color: transparent;
+    display: block;
+  }
+  .hero-desc {
+    color: var(--gray);
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 460px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-desc strong { color: var(--white); font-weight: 500; }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; }
+  .btn-primary {
+    background: var(--orange);
+    color: var(--black);
+    padding: 14px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background .2s, transform .15s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); }
+  .btn-secondary {
+    color: var(--white);
+    padding: 14px 32px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(245,242,237,0.25);
+    border-radius: 2px;
+    transition: border-color .2s, color .2s;
+    letter-spacing: .5px;
+  }
+  .btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
+
+  .hero-visual {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column;
+    align-items: flex-end; gap: 1.5rem;
+  }
+  .hero-stats-row {
+    display: flex; gap: 1.5rem;
+  }
+  .stat-card {
+    background: rgba(21,24,32,0.85);
+    border: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 140px;
+  }
+  .stat-card .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--orange);
+    line-height: 1;
+    display: block;
+  }
+  .stat-card .label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 4px;
+  }
+  .hero-img-frame {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 16/10;
+    background: rgba(21,24,32,0.8);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-img-frame .frame-inner {
+    width: 100%; height: 100%;
+    background:
+      linear-gradient(135deg, rgba(233,109,16,0.08) 0%, transparent 60%);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 12px;
+  }
+  .eye-large {
+    width: 80px; height: 80px; opacity: .6;
+  }
+  .frame-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 4px;
+    color: rgba(245,242,237,0.2);
+  }
+
+  /* ─── MARQUEE ─────────────────────────────────── */
+  .marquee-section {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    overflow: hidden;
+    background: rgba(233,109,16,0.04);
+  }
+  .marquee-track {
+    display: flex; white-space: nowrap;
+    animation: marquee 22s linear infinite;
+  }
+  @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+  .marquee-track span {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: var(--gray);
+    padding: 0 3rem;
+  }
+  .marquee-track span.dot { color: var(--orange); padding: 0 1rem; font-size: 20px; line-height: 1; }
+
+  /* ─── SECTIONS COMMON ─────────────────────────── */
+  section { padding: 6rem 4rem; }
+  .section-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 4.5vw, 64px);
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  .section-subtitle {
+    color: var(--gray);
+    font-size: 16px;
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  /* ─── ABOUT ───────────────────────────────────── */
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-box {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    padding: 3rem;
+    border-radius: 4px;
+    position: relative;
+  }
+  .about-box::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--orange);
+    border-radius: 4px 0 0 4px;
+  }
+  .about-quote {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+  }
+  .about-quote span { color: var(--orange); }
+  .about-text { color: var(--gray); font-size: 15px; line-height: 1.8; }
+  .about-badges {
+    display: flex; flex-wrap: wrap; gap: .75rem;
+    margin-top: 2rem;
+  }
+  .badge {
+    background: rgba(233,109,16,0.1);
+    border: 1px solid var(--border);
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+  }
+  .floater {
+    position: absolute;
+    bottom: -24px; right: -24px;
+    background: var(--orange);
+    color: var(--black);
+    padding: 1.5rem;
+    border-radius: 4px;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    min-width: 120px;
+  }
+  .floater .f-num { font-size: 42px; line-height: 1; display: block; }
+  .floater .f-label { font-size: 12px; letter-spacing: 2px; }
+
+  /* ─── SERVICES ────────────────────────────────── */
+  #services { background: var(--dark); }
+  .services-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .service-card {
+    background: var(--dark);
+    padding: 2.5rem 2rem;
+    transition: background .25s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+  }
+  .service-card:hover { background: rgba(233,109,16,0.06); }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-icon {
+    width: 48px; height: 48px;
+    background: rgba(233,109,16,0.12);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 24px;
+    color: var(--orange);
+  }
+  .service-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: .75rem;
+  }
+  .service-card p { color: var(--gray); font-size: 14px; line-height: 1.7; }
+
+  /* ─── ARTICLES ────────────────────────────────── */
+  #articles {}
+  .articles-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+  }
+  .article-featured {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: border-color .25s;
+  }
+  .article-featured:hover { border-color: var(--orange); }
+  .article-img {
+    width: 100%; aspect-ratio: 16/8;
+    background:
+      linear-gradient(160deg, rgba(233,109,16,0.15) 0%, rgba(13,15,20,0.6) 100%),
+      repeating-linear-gradient(45deg, rgba(233,109,16,0.04) 0px, rgba(233,109,16,0.04) 1px, transparent 1px, transparent 24px);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .article-img-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--orange);
+    opacity: .5;
+  }
+  .article-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+  .article-cat {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: .75rem;
+  }
+  .article-featured h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    line-height: 1.1;
+    margin-bottom: .75rem;
+    letter-spacing: .5px;
+  }
+  .article-featured p { color: var(--gray); font-size: 14px; line-height: 1.7; flex: 1; }
+  .article-meta {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 1.5rem; padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--gray);
+  }
+  .article-meta a {
+    color: var(--orange); text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: .5px;
+  }
+  .article-meta a:hover { text-decoration: underline; }
+  .articles-side { display: flex; flex-direction: column; gap: 1rem; }
+  .article-small {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    transition: border-color .25s;
+    cursor: pointer;
+    flex: 1;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .article-small:hover { border-color: var(--orange); }
+  .article-small h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 19px;
+    line-height: 1.15;
+    letter-spacing: .5px;
+    margin-bottom: .5rem;
+  }
+  .article-small p { color: var(--gray); font-size: 13px; line-height: 1.6; }
+
+  /* ─── NEWSLETTER ──────────────────────────────── */
+  #newsletter {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    padding: 5rem 4rem;
+  }
+  .nl-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 1.5rem;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .nl-eyebrow::before, .nl-eyebrow::after {
+    content: '';
+    display: inline-block; width: 40px; height: 1px; background: var(--orange); opacity: .4;
+  }
+  #newsletter .section-title { font-size: clamp(36px, 4vw, 56px); }
+  #newsletter .section-subtitle { margin: 0 auto 2.5rem; text-align: center; }
+  .nl-form {
+    display: flex; gap: .75rem; max-width: 500px; margin: 0 auto;
+  }
+  .nl-form input {
+    flex: 1;
+    background: rgba(13,15,20,0.8);
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 14px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .nl-form input::placeholder { color: var(--gray); }
+  .nl-form input:focus { border-color: var(--orange); }
+  .nl-form button { cursor: pointer; white-space: nowrap; }
+  .nl-note { font-size: 12px; color: var(--gray); margin-top: 1rem; }
+
+  /* ─── FOOTER ──────────────────────────────────── */
+  footer {
+    padding: 4rem 4rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  .footer-brand p {
+    color: var(--gray); font-size: 14px; line-height: 1.7; margin-top: 1rem; max-width: 280px;
+  }
+  .footer-col h5 {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--white); margin-bottom: 1.25rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+  .footer-col a {
+    color: var(--gray); text-decoration: none; font-size: 14px; transition: color .2s;
+  }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p { font-size: 13px; color: var(--gray); }
+  .footer-bottom span { color: var(--orange); }
+  .social-links { display: flex; gap: 1rem; }
+  .social-links a {
+    width: 36px; height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 16px;
+    transition: border-color .2s, color .2s;
+  }
+  .social-links a:hover { border-color: var(--orange); color: var(--orange); }
+
+  /* ─── SCROLL REVEAL ───────────────────────────── */
+  [data-reveal] {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  [data-reveal].visible {
+    opacity: 1; transform: none;
+  }
+  [data-delay="1"] { transition-delay: .1s; }
+  [data-delay="2"] { transition-delay: .2s; }
+  [data-delay="3"] { transition-delay: .3s; }
+  [data-delay="4"] { transition-delay: .4s; }
+  [data-delay="5"] { transition-delay: .5s; }
+
+  /* ─── RESPONSIVE ──────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    .nav-links { display: none; }
+    .hero, #about { grid-template-columns: 1fr; padding: 7rem 2rem 3rem; gap: 3rem; }
+    .hero-visual { align-items: flex-start; }
+    .hero-stats-row { flex-wrap: wrap; }
+    section { padding: 4rem 2rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .articles-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .floater { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="nav-eye" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="48" fill="#151820" stroke="#e96d10" stroke-width="3"/>
+      <path d="M16 50 Q35 20 50 20 Q65 20 84 50 Q65 80 50 80 Q35 80 16 50Z" stroke="#e96d10" stroke-width="3.5" fill="none"/>
+      <circle cx="50" cy="50" r="16" stroke="#e96d10" stroke-width="3" fill="none"/>
+      <circle cx="50" cy="50" r="9" stroke="#e96d10" stroke-width="2.5" fill="none"/>
+      <circle cx="50" cy="50" r="4" fill="#e96d10"/>
+    </svg>
+    <span class="nav-title">INSIDE <span>THE</span> BRANDS</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#articles">Décryptages</a></li>
+    <li><a href="#newsletter" class="nav-cta">Newsletter</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Média Marketing</div>
+    <h1>
+      <span>DÉCRYPTER</span>
+      <span class="line-orange">LES GRANDES</span>
+      <span class="line-outline">MARQUES</span>
+    </h1>
+    <p class="hero-desc">
+      Derrière chaque campagne se cache une <strong>stratégie</strong>. Inside The Brands plonge au cœur des coulisses du marketing pour vous livrer l'essentiel — analyses, tendances, décryptages.
+    </p>
+    <div class="hero-actions">
+      <a href="#articles" class="btn-primary">Explorer les analyses</a>
+      <a href="#about" class="btn-secondary">Notre mission</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-img-frame">
+      <div class="frame-inner">
+        <svg class="eye-large" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 30 Q25 5 50 5 Q75 5 95 30 Q75 55 50 55 Q25 55 5 30Z" stroke="#e96d10" stroke-width="2.5" fill="none"/>
+          <circle cx="50" cy="30" r="14" stroke="#e96d10" stroke-width="2.5" fill="none"/>
+          <circle cx="50" cy="30" r="8" stroke="#e96d10" stroke-width="2" fill="none"/>
+          <circle cx="50" cy="30" r="3.5" fill="#e96d10"/>
+        </svg>
+        <span class="frame-label">INSIDE THE BRANDS</span>
+      </div>
+    </div>
+    <div class="hero-stats-row">
+      <div class="stat-card" data-reveal>
+        <span class="num">50K+</span>
+        <span class="label">Lecteurs</span>
+      </div>
+      <div class="stat-card" data-reveal data-delay="2">
+        <span class="num">200+</span>
+        <span class="label">Analyses</span>
+      </div>
+      <div class="stat-card" data-reveal data-delay="3">
+        <span class="num">5 ans</span>
+        <span class="label">D'expertise</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span>STRATÉGIE DE MARQUE</span><span class="dot">◆</span>
+    <span>MARKETING DIGITAL</span><span class="dot">◆</span>
+    <span>BRAND IDENTITY</span><span class="dot">◆</span>
+    <span>PUBLICITÉ & CRÉATION</span><span class="dot">◆</span>
+    <span>ANALYSE CONCURRENTIELLE</span><span class="dot">◆</span>
+    <span>CONSUMER INSIGHTS</span><span class="dot">◆</span>
+    <span>STORYTELLING</span><span class="dot">◆</span>
+    <span>SOCIAL MEDIA</span><span class="dot">◆</span>
+    <span>STRATÉGIE DE MARQUE</span><span class="dot">◆</span>
+    <span>MARKETING DIGITAL</span><span class="dot">◆</span>
+    <span>BRAND IDENTITY</span><span class="dot">◆</span>
+    <span>PUBLICITÉ & CRÉATION</span><span class="dot">◆</span>
+    <span>ANALYSE CONCURRENTIELLE</span><span class="dot">◆</span>
+    <span>CONSUMER INSIGHTS</span><span class="dot">◆</span>
+    <span>STORYTELLING</span><span class="dot">◆</span>
+    <span>SOCIAL MEDIA</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual" data-reveal>
+    <div class="about-box">
+      <p class="about-quote">« Comprendre une marque, c'est comprendre <span>une époque.</span> »</p>
+      <p class="about-text">Depuis 2019, Inside The Brands décortique les stratégies marketing des entreprises qui façonnent notre quotidien. Du luxe à la tech, de la grande distribution aux startups disruptives — nous rendons le marketing accessible et passionnant.</p>
+      <div class="about-badges">
+        <span class="badge">Indépendant</span>
+        <span class="badge">100% Editorial</span>
+        <span class="badge">Expert</span>
+      </div>
+    </div>
+    <div class="floater">
+      <span class="f-num">98%</span>
+      <span class="f-label">SATISFACTION</span>
+    </div>
+  </div>
+  <div data-reveal data-delay="2">
+    <p class="section-tag">À propos</p>
+    <h2 class="section-title">VOTRE REGARD<br>SUR LE MARKETING</h2>
+    <p class="section-subtitle">Inside The Brands est le média de référence pour tous ceux qui veulent comprendre les rouages des grandes marques — marketeurs, entrepreneurs, curieux du business.</p>
+    <p style="color:var(--gray); font-size:15px; line-height:1.8; margin-bottom:2rem;">Notre équipe d'analystes scrute les campagnes, les repositionnements, les lancements produits et les tendances pour vous offrir une perspective unique, rigoureuse et actionnable.</p>
+    <a href="#services" class="btn-primary">Découvrir nos analyses</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <p class="section-tag">Ce qu'on fait</p>
+      <h2 class="section-title">NOS FORMATS</h2>
+    </div>
+    <p style="color:var(--gray); font-size:15px; max-width:320px; text-align:right; line-height:1.6;">Des contenus pensés pour les professionnels du marketing et du business.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card" data-reveal>
+      <div class="service-icon">🔍</div>
+      <h3>Décryptages</h3>
+      <p>Analyses approfondies des stratégies marketing des marques les plus influentes du marché global.</p>
+    </div>
+    <div class="service-card" data-reveal data-delay="1">
+      <div class="service-icon">📊</div>
+      <h3>Études de cas</h3>
+      <p>Plongées immersives dans des campagnes mémorables — succès et échecs — pour en tirer les leçons clés.</p>
+    </div>
+    <div class="service-card" data-reveal data-delay="2">
+      <div class="service-icon">📡</div>
+      <h3>Tendances</h3>
+      <p>Veille hebdomadaire sur les grandes évolutions du marketing, des médias et de la communication.</p>
+    </div>
+    <div class="service-card" data-reveal data-delay="3">
+      <div class="service-icon">🎙️</div>
+      <h3>Interviews</h3>
+      <p>Rencontres exclusives avec des directeurs marketing, fondateurs et stratèges des marques qui comptent.</p>
+    </div>
+    <div class="service-card" data-reveal data-delay="4">
+      <div class="service-icon">📨</div>
+      <h3>Newsletter</h3>
+      <p>Chaque semaine, l'essentiel du marketing dans votre boîte mail — condensé, pertinent, actionnable.</p>
+    </div>
+    <div class="service-card" data-reveal data-delay="5">
+      <div class="service-icon">🏆</div>
+      <h3>Classements</h3>
+      <p>Les marques les mieux positionnées, les campagnes de l'année, les stratèges à suivre de près.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section id="articles">
+  <p class="section-tag">Dernières analyses</p>
+  <h2 class="section-title">DÉCRYPTAGES<br>DU MOMENT</h2>
+  <div class="articles-grid">
+    <div class="article-featured" data-reveal>
+      <div class="article-img">
+        <span class="article-img-label">ANALYSE EXCLUSIVE</span>
+      </div>
+      <div class="article-body">
+        <span class="article-cat">Stratégie de marque</span>
+        <h3>Comment Nike a réinventé son storytelling pour la génération Z</h3>
+        <p>En abandonnant ses codes classiques, Nike a opéré un virage stratégique radical sur les réseaux sociaux. Décryptage d'une transformation qui redéfinit les standards du marketing sportif.</p>
+        <div class="article-meta">
+          <span>12 min de lecture · 28 avril 2025</span>
+          <a href="#">Lire l'analyse →</a>
+        </div>
+      </div>
+    </div>
+    <div class="articles-side">
+      <div class="article-small" data-reveal data-delay="1">
+        <div>
+          <span class="article-cat">Publicité</span>
+          <h4>Pourquoi Jacquemus domine l'art de la campagne virale</h4>
+          <p style="color:var(--gray); font-size:13px; line-height:1.6; margin-top:8px;">Des sacs géants dans Paris aux défilés en plein air — la marque crée l'événement avec un budget maîtrisé.</p>
+        </div>
+        <div class="article-meta">
+          <span>8 min · 20 avril</span>
+          <a href="#">Lire →</a>
+        </div>
+      </div>
+      <div class="article-small" data-reveal data-delay="2">
+        <div>
+          <span class="article-cat">Digital</span>
+          <h4>Le repositionnement silencieux de Duolingo sur TikTok</h4>
+          <p style="color:var(--gray); font-size:13px; line-height:1.6; margin-top:8px;">Une mascotte décomplexée, un ton provocateur, des millions de vues. L'étude d'un brand voice audacieux.</p>
+        </div>
+        <div class="article-meta">
+          <span>6 min · 14 avril</span>
+          <a href="#">Lire →</a>
+        </div>
+      </div>
+      <div class="article-small" data-reveal data-delay="3">
+        <div>
+          <span class="article-cat">Luxe</span>
+          <h4>LVMH et la stratégie de rareté — quand le manque devient désir</h4>
+          <p style="color:var(--gray); font-size:13px; line-height:1.6; margin-top:8px;">Derrière les listes d'attente et les éditions limitées, une mécanique marketing millimétrée.</p>
+        </div>
+        <div class="article-meta">
+          <span>10 min · 7 avril</span>
+          <a href="#">Lire →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="nl-eyebrow">Newsletter hebdomadaire</div>
+  <h2 class="section-title" data-reveal>L'ŒIL MARKETING<br>DANS VOTRE BOÎTE MAIL</h2>
+  <p class="section-subtitle" data-reveal data-delay="1">Chaque lundi, nos meilleures analyses, les campagnes à retenir et les insights qui font la différence. Rejoignez 50 000 lecteurs.</p>
+  <div class="nl-form" data-reveal data-delay="2">
+    <input type="email" placeholder="votre@email.com">
+    <button class="btn-primary">S'abonner</button>
+  </div>
+  <p class="nl-note" data-reveal data-delay="3">Gratuit · Désinscription en un clic · Aucun spam</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:.25rem;">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="48" fill="#151820" stroke="#e96d10" stroke-width="3"/>
+          <path d="M16 50 Q35 20 50 20 Q65 20 84 50 Q65 80 50 80 Q35 80 16 50Z" stroke="#e96d10" stroke-width="3.5" fill="none"/>
+          <circle cx="50" cy="50" r="16" stroke="#e96d10" stroke-width="3" fill="none"/>
+          <circle cx="50" cy="50" r="4" fill="#e96d10"/>
+        </svg>
+        <span style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:2px;">INSIDE <span style="color:var(--orange);">THE</span> BRANDS</span>
+      </div>
+      <p>Le média de référence pour comprendre les stratégies des marques qui façonnent notre monde.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Explorer</h5>
+      <ul>
+        <li><a href="#">Décryptages</a></li>
+        <li><a href="#">Études de cas</a></li>
+        <li><a href="#">Tendances</a></li>
+        <li><a href="#">Classements</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Thèmes</h5>
+      <ul>
+        <li><a href="#">Luxe</a></li>
+        <li><a href="#">Tech & Digital</a></li>
+        <li><a href="#">Grande conso</a></li>
+        <li><a href="#">Startups</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Partenariats</a></li>
+        <li><a href="#">Presse</a></li>
+        <li><a href="#">contact@insidethebrands.fr</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Inside The Brands · Tous droits réservés · Fait avec <span>♥</span></p>
+    <div class="social-links">
+      <a href="#" title="Instagram">IG</a>
+      <a href="#" title="LinkedIn">in</a>
+      <a href="#" title="Twitter/X">𝕏</a>
+      <a href="#" title="YouTube">YT</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nike & la Gen Z — Inside The Brands</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --black:#0d0f14; --dark:#151820; --orange:#e96d10; --white:#f5f2ed; --gray:#8a8f9e; --border:rgba(233,109,16,0.18); }
+  body { background:var(--black); color:var(--white); font-family:'DM Sans',sans-serif; font-size:17px; line-height:1.8; }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.25rem 4rem; background:rgba(13,15,20,0.92); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); }
+  .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .nav-title { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:2px; color:var(--white); }
+  .nav-title span { color:var(--orange); }
+  .nav-back { color:var(--gray); text-decoration:none; font-size:13px; font-weight:500; letter-spacing:1px; text-transform:uppercase; transition:color .2s; }
+  .nav-back:hover { color:var(--orange); }
+
+  .article-hero { padding: 140px 4rem 4rem; max-width:900px; margin:0 auto; }
+  .article-cat { font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--orange); margin-bottom:1.25rem; display:block; }
+  .article-hero h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(48px,6vw,80px); line-height:1; letter-spacing:1px; margin-bottom:1.5rem; }
+  .article-hero h1 span { color:var(--orange); }
+  .article-intro { font-size:20px; color:var(--gray); line-height:1.7; margin-bottom:2rem; font-weight:300; }
+  .article-meta-bar { display:flex; align-items:center; gap:2rem; padding:1.25rem 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:3rem; flex-wrap:wrap; }
+  .article-meta-bar span { font-size:13px; color:var(--gray); }
+  .article-meta-bar strong { color:var(--white); }
+
+  .article-img-full { width:100%; max-width:900px; margin:0 auto 3rem; aspect-ratio:16/7; background:linear-gradient(135deg, rgba(233,109,16,0.25) 0%, rgba(13,15,20,0.9) 100%); border:1px solid var(--border); border-radius:4px; display:flex; align-items:center; justify-content:center; }
+  .article-img-full span { font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:4px; color:rgba(233,109,16,0.4); }
+
+  .article-content { max-width:720px; margin:0 auto; padding:0 4rem 6rem; }
+  .article-content h2 { font-family:'Bebas Neue',sans-serif; font-size:36px; letter-spacing:1px; color:var(--white); margin:2.5rem 0 1rem; }
+  .article-content h3 { font-size:20px; font-weight:700; color:var(--white); margin:2rem 0 .75rem; }
+  .article-content p { color:rgba(245,242,237,0.82); margin-bottom:1.25rem; }
+  .article-content strong { color:var(--white); font-weight:600; }
+  .article-content em { color:var(--orange); font-style:normal; font-weight:500; }
+
+  .pullquote { border-left:4px solid var(--orange); padding:1.5rem 2rem; margin:2.5rem 0; background:rgba(233,109,16,0.06); border-radius:0 4px 4px 0; }
+  .pullquote p { font-family:'Bebas Neue',sans-serif; font-size:28px; line-height:1.2; color:var(--white); margin:0; }
+  .pullquote cite { font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gray); margin-top:.75rem; display:block; }
+
+  .key-points { background:var(--dark); border:1px solid var(--border); border-radius:4px; padding:2rem; margin:2.5rem 0; }
+  .key-points h4 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin-bottom:1.25rem; }
+  .key-points ul { list-style:none; display:flex; flex-direction:column; gap:.75rem; }
+  .key-points li { color:rgba(245,242,237,0.82); font-size:15px; padding-left:1.5rem; position:relative; }
+  .key-points li::before { content:'◆'; position:absolute; left:0; color:var(--orange); font-size:8px; top:6px; }
+
+  .article-footer { max-width:720px; margin:0 auto; padding:0 4rem 4rem; }
+  .back-btn { display:inline-flex; align-items:center; gap:8px; color:var(--orange); text-decoration:none; font-size:14px; font-weight:700; letter-spacing:1px; text-transform:uppercase; border:1px solid var(--border); padding:12px 24px; border-radius:2px; transition:background .2s, color .2s; }
+  .back-btn:hover { background:var(--orange); color:var(--black); }
+
+  @media(max-width:768px) { nav { padding:1rem 1.5rem; } .article-hero, .article-content, .article-footer { padding-left:1.5rem; padding-right:1.5rem; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="32" height="32" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" fill="#151820" stroke="#e96d10" stroke-width="3"/><path d="M16 50 Q35 20 50 20 Q65 20 84 50 Q65 80 50 80 Q35 80 16 50Z" stroke="#e96d10" stroke-width="3.5" fill="none"/><circle cx="50" cy="50" r="16" stroke="#e96d10" stroke-width="3" fill="none"/><circle cx="50" cy="50" r="4" fill="#e96d10"/></svg>
+    <span class="nav-title">INSIDE <span>THE</span> BRANDS</span>
+  </a>
+  <a href="index.html#articles" class="nav-back">← Retour aux analyses</a>
+</nav>
+
+<div class="article-hero">
+  <span class="article-cat">Stratégie de marque</span>
+  <h1>Comment Nike a réinventé son storytelling pour la <span>génération Z</span></h1>
+  <p class="article-intro">En abandonnant ses codes classiques, Nike a opéré un virage stratégique radical. Fini les campagnes télévisées à 50 millions de dollars — place aux créateurs locaux, aux narrations brutes et à l'authenticité revendiquée.</p>
+  <div class="article-meta-bar">
+    <span>📅 <strong>12 mai 2025</strong></span>
+    <span>⏱ <strong>12 min</strong> de lecture</span>
+    <span>✍️ Inside The Brands</span>
+    <span>🏷 Stratégie · Storytelling · Gen Z</span>
+  </div>
+</div>
+
+<div class="article-img-full" style="max-width:900px; margin:0 auto 3rem; padding:0 4rem;">
+  <div style="width:100%; aspect-ratio:16/7; background:linear-gradient(135deg,rgba(233,109,16,0.2) 0%,rgba(13,15,20,0.9) 100%); border:1px solid var(--border); border-radius:4px; display:flex; align-items:center; justify-content:center;">
+    <span style="font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:4px; color:rgba(233,109,16,0.4);">NIKE · JUST DO IT · 2025</span>
+  </div>
+</div>
+
+<div class="article-content">
+  <h2>Le problème Nike en 2022</h2>
+  <p>En 2022, Nike fait face à un paradoxe : la marque est partout, mais <strong>ne parle plus à personne</strong>. Les 18-25 ans — la génération Z — lui préfèrent New Balance, On Running, ou même des marques vintage sans histoire récente. Le problème ? Nike a trop longtemps misé sur des égéries inaccessibles et des campagnes lisses, calibrées pour plaire à tout le monde.</p>
+  <p>Les chiffres parlent : entre 2021 et 2023, la part de marché de Nike chez les moins de 25 ans recule de 4 points aux États-Unis. En Europe, le phénomène est encore plus marqué. Les dirigeants tirent la sonnette d'alarme.</p>
+
+  <div class="pullquote">
+    <p>« Nous avons arrêté d'écouter la rue. Nous faisions du marketing pour nos actionnaires, pas pour nos clients. »</p>
+    <cite>— John Donahoe, CEO Nike, conférence investisseurs 2023</cite>
+  </div>
+
+  <h2>Le virage stratégique : l'authenticité comme arme</h2>
+  <p>La réponse de Nike est radicale. En 2023, la marque lance une série de campagnes qui rompent totalement avec ses codes historiques. <em>Fini les stades remplis et les superproductions hollywoodiennes.</em> La nouvelle direction créative mise sur trois piliers fondamentaux.</p>
+
+  <h3>1. Les micro-créateurs plutôt que les méga-stars</h3>
+  <p>Nike signe des partenariats avec des centaines de créateurs à 50 000-200 000 abonnés, plutôt que de tout miser sur Cristiano Ronaldo (270 millions d'abonnés Instagram). Le raisonnement est simple : un créateur de niche parle à une communauté qui lui fait <strong>vraiment confiance</strong>. Le taux d'engagement est 8 fois supérieur, et le coût 20 fois inférieur.</p>
+
+  <h3>2. Le "rough cut" — l'esthétique imparfaite</h3>
+  <p>Les nouvelles campagnes Nike ressemblent à des vidéos TikTok filmées avec un iPhone. Lumière naturelle, sons d'ambiance, montage brut. Ce choix n'est pas un manque de budget — c'est une décision créative délibérée. La Gen Z détecte immédiatement le contenu "trop produit" et le rejette comme de la publicité.</p>
+
+  <h3>3. Le sport local et inclusif</h3>
+  <p>Nike filme des basketteurs dans des terrains de banlieue parisienne, des footballeuses en Afrique du Sud, des skaters dans les rues de Lagos. <em>Le sport n'est plus une performance d'élite — c'est une pratique quotidienne, accessible, diverse.</em></p>
+
+  <div class="key-points">
+    <h4>Les chiffres clés de la transformation</h4>
+    <ul>
+      <li>+34% d'engagement sur les réseaux sociaux entre 2023 et 2024</li>
+      <li>Budget micro-influenceurs multiplié par 5 en 2 ans</li>
+      <li>Taux de mémorisation publicitaire en hausse de 18 points chez les 18-25 ans</li>
+      <li>3,2 milliards de vues organiques sur les campagnes "rough cut" en 2024</li>
+      <li>Retour à la croissance sur le segment 18-25 ans dès le Q3 2024</li>
+    </ul>
+  </div>
+
+  <h2>Ce que les autres marques peuvent en apprendre</h2>
+  <p>La leçon Nike va bien au-delà du marketing sportif. Elle illustre un principe universel : <strong>la perfection est l'ennemi de la connexion.</strong> Les consommateurs de la Gen Z ne cherchent pas l'aspiration — ils cherchent la représentation. Ils veulent se voir dans les marques qu'ils achètent.</p>
+  <p>Pour les équipes marketing, cela implique un changement profond de culture. Accepter de perdre le contrôle créatif. Faire confiance à des voix extérieures. Mesurer l'engagement plutôt que la portée brute. Et surtout — <em>écouter avant de parler.</em></p>
+  <p>Nike n'a pas réinventé le marketing. Elle a simplement décidé de redevenir humaine. Et ça, en 2025, c'est la stratégie la plus audacieuse qui soit.</p>
+</div>
+
+<div class="article-footer">
+  <a href="index.html#articles" class="back-btn">← Retour aux analyses</a>
+</div>
+</body>
+</html>

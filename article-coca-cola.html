@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coca-Cola & l'IA — Inside The Brands</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{--black:#0d0f14;--dark:#151820;--orange:#e96d10;--white:#f5f2ed;--gray:#8a8f9e;--border:rgba(233,109,16,0.18);}
+  body{background:var(--black);color:var(--white);font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.8;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 4rem;background:rgba(13,15,20,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .nav-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--white);}
+  .nav-title span{color:var(--orange);}
+  .nav-back{color:var(--gray);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;transition:color .2s;}
+  .nav-back:hover{color:var(--orange);}
+  .article-hero{padding:140px 4rem 4rem;max-width:900px;margin:0 auto;}
+  .article-cat{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:1.25rem;display:block;}
+  .article-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);line-height:1;letter-spacing:1px;margin-bottom:1.5rem;}
+  .article-hero h1 span{color:var(--orange);}
+  .article-intro{font-size:20px;color:var(--gray);line-height:1.7;margin-bottom:2rem;font-weight:300;}
+  .article-meta-bar{display:flex;align-items:center;gap:2rem;padding:1.25rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:3rem;flex-wrap:wrap;}
+  .article-meta-bar span{font-size:13px;color:var(--gray);}
+  .article-meta-bar strong{color:var(--white);}
+  .article-content{max-width:720px;margin:0 auto;padding:0 4rem 6rem;}
+  .article-content h2{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:1px;color:var(--white);margin:2.5rem 0 1rem;}
+  .article-content h3{font-size:20px;font-weight:700;color:var(--white);margin:2rem 0 .75rem;}
+  .article-content p{color:rgba(245,242,237,0.82);margin-bottom:1.25rem;}
+  .article-content strong{color:var(--white);font-weight:600;}
+  .article-content em{color:var(--orange);font-style:normal;font-weight:500;}
+  .pullquote{border-left:4px solid var(--orange);padding:1.5rem 2rem;margin:2.5rem 0;background:rgba(233,109,16,0.06);border-radius:0 4px 4px 0;}
+  .pullquote p{font-family:'Bebas Neue',sans-serif;font-size:28px;line-height:1.2;color:var(--white);margin:0;}
+  .key-points{background:var(--dark);border:1px solid var(--border);border-radius:4px;padding:2rem;margin:2.5rem 0;}
+  .key-points h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:1.25rem;}
+  .key-points ul{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
+  .key-points li{color:rgba(245,242,237,0.82);font-size:15px;padding-left:1.5rem;position:relative;}
+  .key-points li::before{content:'◆';position:absolute;left:0;color:var(--orange);font-size:8px;top:6px;}
+  .article-footer{max-width:720px;margin:0 auto;padding:0 4rem 4rem;}
+  .back-btn{display:inline-flex;align-items:center;gap:8px;color:var(--orange);text-decoration:none;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--border);padding:12px 24px;border-radius:2px;transition:background .2s,color .2s;}
+  .back-btn:hover{background:var(--orange);color:var(--black);}
+  @media(max-width:768px){nav{padding:1rem 1.5rem;}.article-hero,.article-content,.article-footer{padding-left:1.5rem;padding-right:1.5rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="32" height="32" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" fill="#151820" stroke="#e96d10" stroke-width="3"/><path d="M16 50 Q35 20 50 20 Q65 20 84 50 Q65 80 50 80 Q35 80 16 50Z" stroke="#e96d10" stroke-width="3.5" fill="none"/><circle cx="50" cy="50" r="16" stroke="#e96d10" stroke-width="3" fill="none"/><circle cx="50" cy="50" r="4" fill="#e96d10"/></svg>
+    <span class="nav-title">INSIDE <span>THE</span> BRANDS</span>
+  </a>
+  <a href="index.html#articles" class="nav-back">← Retour aux analyses</a>
+</nav>
+<div class="article-hero">
+  <span class="article-cat">Tech & IA</span>
+  <h1>Comment Coca-Cola utilise <span>l'IA</span> pour personnaliser ses campagnes</h1>
+  <p class="article-intro">Des visuels générés par intelligence artificielle aux messages hyper-ciblés — la marque centenaire entre dans une nouvelle ère créative qui redéfinit les frontières entre technologie et émotion.</p>
+  <div class="article-meta-bar">
+    <span>📅 <strong>7 avril 2025</strong></span>
+    <span>⏱ <strong>9 min</strong> de lecture</span>
+    <span>✍️ Inside The Brands</span>
+    <span>🏷 IA · Coca-Cola · Innovation</span>
+  </div>
+</div>
+<div class="article-content">
+  <h2>134 ans d'histoire, et une révolution créative</h2>
+  <p>Coca-Cola est l'une des marques les plus reconnues au monde. Son logo, sa couleur rouge, son contour de bouteille — tout est iconique. Mais en 2023, la marque a pris une décision surprenante : <strong>intégrer l'intelligence artificielle au cœur de son processus créatif.</strong></p>
+  <p>Le premier signal fort : la campagne "Create Real Magic", qui invitait des artistes du monde entier à créer des œuvres à partir d'assets Coca-Cola via des outils d'IA générative. <em>Des milliers d'œuvres générées, une communauté créative engagée, et une couverture presse mondiale.</em></p>
+
+  <div class="pullquote">
+    <p>« L'IA ne remplace pas la créativité humaine. Elle l'amplifie à une échelle qu'on n'aurait jamais imaginée. »</p>
+  </div>
+
+  <h2>La personnalisation à grande échelle</h2>
+  <p>L'IA permet à Coca-Cola de faire quelque chose d'impossible il y a encore 5 ans : <strong>créer des milliers de variantes d'une même publicité</strong>, chacune optimisée pour un segment d'audience précis. L'image de fond change selon la région, le texte selon l'âge, les couleurs selon les préférences détectées.</p>
+  <p>En Inde, une campagne Coca-Cola a généré automatiquement des visuels adaptés à chacun des 29 États du pays — langue locale, références culturelles, personnages représentatifs. Résultat : <strong>+40% d'engagement</strong> par rapport aux campagnes nationales génériques.</p>
+
+  <div class="key-points">
+    <h4>L'IA chez Coca-Cola en chiffres</h4>
+    <ul>
+      <li>500 millions de dollars investis dans l'IA et le digital en 2024</li>
+      <li>+40% d'engagement sur les campagnes personnalisées par IA</li>
+      <li>Réduction de 35% du temps de production créative</li>
+      <li>12 000 variantes créatives générées pour une seule campagne mondiale</li>
+      <li>Partenariat stratégique avec OpenAI et Bain & Company</li>
+    </ul>
+  </div>
+
+  <h2>Les limites et les risques</h2>
+  <p>L'aventure IA de Coca-Cola n'est pas sans zones de turbulence. La campagne "Holiday" de Noël 2024 — entièrement générée par IA — a suscité une vive polémique. Des consommateurs ont reproché à la marque de <em>sacrifier l'âme et l'émotion</em> au profit de l'efficacité algorithmique.</p>
+  <p>La leçon : l'IA est un outil extraordinaire pour la personnalisation et la production à grande échelle. Mais pour les moments émotionnels forts — Noël, l'amour, la famille — <strong>le toucher humain reste irremplaçable.</strong> Les marques qui réussiront dans l'ère de l'IA seront celles qui sauront doser les deux.</p>
+</div>
+<div class="article-footer">
+  <a href="index.html#articles" class="back-btn">← Retour aux analyses</a>
+</div>
+</body>
+</html>

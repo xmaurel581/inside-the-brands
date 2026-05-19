@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: fr
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    folder: "articles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Catégorie", name: "categorie", widget: "select", options: ["Stratégie de marque", "Publicité", "Digital", "Luxe", "Tendances", "Tech & IA", "Startups", "Grande conso", "Social Media"] }
+      - { label: "Introduction", name: "intro", widget: "text" }
+      - { label: "Temps de lecture", name: "readtime", widget: "string", default: "5 min" }
+      - { label: "Tags", name: "tags", widget: "string" }
+      - { label: "Date de publication", name: "date", widget: "datetime", format: "DD MMMM YYYY" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
